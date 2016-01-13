@@ -1,0 +1,42 @@
+{
+	"manifest_version": 2,
+	
+	"name": "TRA Genie",
+	"description": "TRA Genie",
+	"version": "1.0",
+	"icons": { 	
+		"16": "images/icon.png",
+		"48": "images/icon.png",
+		"128": "images/icon.png" 
+	},
+	"options_page": "option.html",
+	"background": {
+		"scripts": [
+			"js/jquery-1.8.3.js",
+			"js/background.js"
+		],
+		"persistent": false
+	},
+	"content_scripts": [
+		{
+			"matches": [
+				"http://twtraffic.tra.gov.tw/twrail/",
+				"http://twtraffic.tra.gov.tw/twrail/index.aspx",
+				"http://twtraffic.tra.gov.tw/twrail/QuickSearch.aspx",
+				"http://twtraffic.tra.gov.tw/twrail/SearchResult.aspx*"
+			],
+			"js": ["js/jquery-1.8.3.js", "js/contentScript.js"],
+			"all_frames" : true
+		}
+	],
+	"permissions": [
+		"tabs", "contextMenus", "storage", 
+        "http://twtraffic.tra.gov.tw/twrail/*"
+	],
+	"web_accessible_resources": [
+		"css/general.css",
+		"js/TRA_contentScript.js",
+		"images/arrowrb.gif"
+	],
+	"content_security_policy": "script-src 'self'; object-src 'self'"
+}

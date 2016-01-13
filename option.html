@@ -1,0 +1,215 @@
+<html>
+	<meta charset="UTF-8">
+	<head>
+		<link rel="stylesheet" type="text/css" href="css/general.css" />
+		<link rel="stylesheet" type="text/css" href="css/jquery-ui-1.9.2.css" />
+		<script src="js/jquery-1.8.3.js"></script>
+		<script src="js/jquery-ui-1.9.2.min.js"></script>
+		<script src="js/template.js"></script>
+		<script src="js/options.js"></script>
+
+	</head>
+	<body style="background-color: rgb(215, 235, 249);">
+		<div id="searchConfigContent">
+			<div id="personalConfigContent">
+				<div class="addPersonalConfigTile">
+					<img class="imgAddPersonalConfigTile" src="images/add.png" alt="">
+				</div>
+			</div>
+			<div style="
+				float: left;
+				height: 100%;
+				width: 1px;
+				border-right: 1px solid #ccc;
+			"></div>
+			<div id="personalSettingContent">
+				<div class="mask"></div>
+				<img src="images/bigLoader.gif" alt="" class="loadding">
+				<div id="trainFromAndToSetting">
+					<div class="stationBox">
+						<b>起程站</b>
+						<select id="FromCity" name="FromCity">
+							<option value="-1" selected>
+								請選擇縣市
+							</option>
+							<option value="0">臺北地區</option>
+							<option value="1">桃園地區</option>
+							<option value="2">新竹地區</option>
+							<option value="3">苗栗地區</option>
+							<option value="4">臺中地區</option>
+							<option value="5">彰化地區</option>
+							<option value="6">南投地區</option>
+							<option value="7">雲林地區</option>
+							<option value="8">嘉義地區</option>
+							<option value="9">臺南地區</option>
+							<option value="10">高雄地區</option>
+							<option value="11">屏東地區</option>
+							<option value="12">臺東地區</option>
+							<option value="13">花蓮地區</option>
+							<option value="14">宜蘭地區</option>
+							<option value="15">平溪/深澳線</option>
+							<option value="16">內灣/六家線</option>
+							<option value="17">集集線</option>
+							<option value="18">沙崙線</option>
+						</select>
+						<select id="FromStation" name="FromStation" style="width:65px;">
+							<option value="-1" selected>
+								請選擇站名
+							</option>
+							<option value="1810">福隆</option>
+							<option value="1809">貢寮</option>
+							<option value="1808">雙溪</option>
+							<option value="1807">牡丹</option>
+							<option value="1806">三貂嶺</option>
+							<option value="1805">猴硐</option>
+							<option value="1804">瑞芳</option>
+							<option value="1803">四腳亭</option>
+							<option value="1802">暖暖</option>
+							<option value="1001">基隆</option>
+							<option value="1029">三坑</option>
+							<option value="1002">八堵</option>
+							<option value="1003">七堵</option>
+							<option value="1030">百福</option>
+							<option value="1004">五堵</option>
+							<option value="1005">汐止</option>
+							<option value="1031">汐科</option>
+							<option value="1006">南港</option>
+							<option value="1007">松山</option>
+							<option value="1008">臺北</option>
+							<option value="1009">萬華</option>
+							<option value="1011">板橋</option>
+							<option value="1032">浮洲</option>
+							<option value="1012">樹林</option>
+							<option value="1013">山佳</option>
+							<option value="1014">鶯歌</option>
+						</select>
+						車站
+						<!--
+						或輸入車站名稱  
+						<input id="FromStationInput" name="FromStationInput" type="text" style="width:72px" autocomplete="off" class="ac_input">站
+						-->
+						<div>
+						<input name="FromStationName" type="radio" id="lbf_0" value="0" checked="checked"><label for="lbf_0">其他</label>     
+						<input name="FromStationName" type="radio" id="lbf_1008" value="1008"><label for="lbf_1008">臺北</label>
+						<input name="FromStationName" type="radio" id="lbf_1011" value="1011"><label for="lbf_1011">板橋</label>
+						<input name="FromStationName" type="radio" id="lbf_1015" value="1015"><label for="lbf_1015">桃園</label>
+						<input name="FromStationName" type="radio" id="lbf_1017" value="1017"><label for="lbf_1017">中壢</label>
+						<input name="FromStationName" type="radio" id="lbf_1025" value="1025"><label for="lbf_1025">新竹</label>
+						<input name="FromStationName" type="radio" id="lbf_1319" value="1319"><label for="lbf_1319">臺中</label>
+						<input name="FromStationName" type="radio" id="lbf_1120" value="1120"><label for="lbf_1120">彰化</label>
+						</div>
+						<div>
+						<input name="FromStationName" type="radio" id="lbf_1210" value="1210"><label for="lbf_1210">斗六</label>
+						<input name="FromStationName" type="radio" id="lbf_1215" value="1215"><label for="lbf_1215">嘉義</label>
+						<input name="FromStationName" type="radio" id="lbf_1228" value="1228"><label for="lbf_1228">臺南</label>
+						<input name="FromStationName" type="radio" id="lbf_1238" value="1238"><label for="lbf_1238">高雄</label>
+						<input name="FromStationName" type="radio" id="lbf_1406" value="1406"><label for="lbf_1406">屏東</label>
+						<input name="FromStationName" type="radio" id="lbf_1820" value="1820"><label for="lbf_1820">宜蘭</label>
+						<input name="FromStationName" type="radio" id="lbf_1715" value="1715"><label for="lbf_1715">花蓮</label>
+						<input name="FromStationName" type="radio" id="lbf_1632" value="1632"><label for="lbf_1632">臺東</label>
+						</div>
+					</div>
+					
+					<div class="stationBox">
+						<b>到達站</b>
+						<select id="ToCity" name="ToCity">
+							<option value="-1" selected>
+								請選擇縣市
+							</option>
+							<option value="0">臺北地區</option>
+							<option value="1">桃園地區</option>
+							<option value="2">新竹地區</option>
+							<option value="3">苗栗地區</option>
+							<option value="4">臺中地區</option>
+							<option value="5">彰化地區</option>
+							<option value="6">南投地區</option>
+							<option value="7">雲林地區</option>
+							<option value="8">嘉義地區</option>
+							<option value="9">臺南地區</option>
+							<option value="10">高雄地區</option>
+							<option value="11">屏東地區</option>
+							<option value="12">臺東地區</option>
+							<option value="13">花蓮地區</option>
+							<option value="14">宜蘭地區</option>
+							<option value="15">平溪/深澳線</option>
+							<option value="16">內灣/六家線</option>
+							<option value="17">集集線</option>
+							<option value="18">沙崙線</option>
+						</select>
+						<select id="ToStation" name="ToStation" style="width:65px;">
+							<option value="-1" selected>
+								請選擇站名
+							</option>
+							<option value="1810">福隆</option>
+							<option value="1809">貢寮</option>
+							<option value="1808">雙溪</option>
+							<option value="1807">牡丹</option>
+							<option value="1806">三貂嶺</option>
+							<option value="1805">猴硐</option>
+							<option value="1804">瑞芳</option>
+							<option value="1803">四腳亭</option>
+							<option value="1802">暖暖</option>
+							<option value="1001">基隆</option>
+							<option value="1029">三坑</option>
+							<option value="1002">八堵</option>
+							<option value="1003">七堵</option>
+							<option value="1030">百福</option>
+							<option value="1004">五堵</option>
+							<option value="1005">汐止</option>
+							<option value="1031">汐科</option>
+							<option value="1006">南港</option>
+							<option value="1007">松山</option>
+							<option value="1008">臺北</option>
+							<option value="1009">萬華</option>
+							<option value="1011">板橋</option>
+							<option value="1032">浮洲</option>
+							<option value="1012">樹林</option>
+							<option value="1013">山佳</option>
+							<option value="1014">鶯歌</option>
+						</select>
+						車站
+						<!--
+						或輸入車站名稱  
+						<input id="ToStationInput" name="ToStationInput" type="text" style="width:72px" autocomplete="off" class="ac_input">
+						-->
+						<div>
+						<input name="ToStationName" type="radio" id="lbt_0" value="0" checked="checked"><label for="lbt_0">其他</label>     
+						<input name="ToStationName" type="radio" id="lbt_1008" value="1008"><label for="lbt_1008">臺北</label>
+						<input name="ToStationName" type="radio" id="lbt_1011" value="1011"><label for="lbt_1011">板橋</label>
+						<input name="ToStationName" type="radio" id="lbt_1015" value="1015"><label for="lbt_1015">桃園</label>
+						<input name="ToStationName" type="radio" id="lbt_1017" value="1017"><label for="lbt_1017">中壢</label>
+						<input name="ToStationName" type="radio" id="lbt_1025" value="1025"><label for="lbt_1025">新竹</label>
+						<input name="ToStationName" type="radio" id="lbt_1319" value="1319"><label for="lbt_1319">臺中</label>
+						<input name="ToStationName" type="radio" id="lbt_1120" value="1120"><label for="lbt_1120">彰化</label>
+						</div>
+						<div>
+						<input name="ToStationName" type="radio" id="lbt_1210" value="1210"><label for="lbt_1210">斗六</label>
+						<input name="ToStationName" type="radio" id="lbt_1215" value="1215"><label for="lbt_1215">嘉義</label>
+						<input name="ToStationName" type="radio" id="lbt_1228" value="1228"><label for="lbt_1228">臺南</label>
+						<input name="ToStationName" type="radio" id="lbt_1238" value="1238"><label for="lbt_1238">高雄</label>
+						<input name="ToStationName" type="radio" id="lbt_1406" value="1406"><label for="lbt_1406">屏東</label>
+						<input name="ToStationName" type="radio" id="lbt_1820" value="1820"><label for="lbt_1820">宜蘭</label>
+						<input name="ToStationName" type="radio" id="lbt_1715" value="1715"><label for="lbt_1715">花蓮</label>
+						<input name="ToStationName" type="radio" id="lbt_1632" value="1632"><label for="lbt_1632">臺東</label>
+						</div>
+					</div>
+					
+					<div class="stationBox">
+						選擇車種
+						<input name="TrainClass" id="trnType3" type="radio" value="2"><label for="trnType3">所有車種</label>
+						<input name="TrainClass" id="trnType1" type="radio" value="'1100','1101','1102','1107','1108','1110','1120','1114','1115'"><label for="trnType1">對號列車</label>
+						<input name="TrainClass" id="trnType2" type="radio" value="'1131','1132','1140'"><label for="trnType2">非對號列車&nbsp;</label>
+					</div>
+				</div>
+				<div>
+					<img class="logo" src="images/logo.jpg">
+				</div>
+			</div>
+			<div style="clear: both;"></div>
+		</div>
+	</body>
+	<img class="closeImg" name="close"
+	src="images/close.png" 
+	alt="" width="28px" height="28px" 
+	style="position:fixed;top: 0px;left: 0px;display:none;">
+</html>
